@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App</string>
+
+    <string name="app_click_me">Click me</string>
+    <!-- \n stand for new line; '%1$s' is the first string argument in this string template-->
+    <string name="user_list_item">User\n%1$s</string>
+
+
+    <string name="user_details_title">User details</string>
+</resources>
