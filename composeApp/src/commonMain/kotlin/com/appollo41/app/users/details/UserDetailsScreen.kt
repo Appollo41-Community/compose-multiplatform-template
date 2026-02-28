@@ -33,7 +33,7 @@ fun UserDetailsScreen(
     LaunchedEffect(viewModel, onClose) {
         viewModel.effects.collect {
             when (it) {
-                UserDetailsContract.SideEffect.CustomerDeleted -> onClose()
+                UserDetailsContract.SideEffect.UserDeleted -> onClose()
             }
         }
     }
@@ -68,7 +68,7 @@ private fun UserDetailsScreen(
                 actions = {
                     AppBarIcon(
                         icon = Icons.Default.Delete,
-                        onClick = { eventPublisher(UserDetailsContract.UiEvent.DeleteCustomer) },
+                        onClick = { eventPublisher(UserDetailsContract.UiEvent.DeleteUser) },
                     )
                 }
             )
@@ -79,22 +79,22 @@ private fun UserDetailsScreen(
                     .fillMaxWidth()
                     .padding(paddingValues),
             ) {
-                if (state.customer?.name != null) {
+                if (state.user?.name != null) {
                     Text(
                         modifier = Modifier
                             .padding(horizontal = 16.dp)
                             .padding(vertical = 8.dp),
-                        text = state.customer.name,
+                        text = state.user.name,
                         textAlign = TextAlign.Center,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 18.sp,
                     )
                 }
 
-                if (state.customer?.email != null) {
+                if (state.user?.email != null) {
                     Text(
                         modifier = Modifier.padding(horizontal = 16.dp),
-                        text = state.customer.email
+                        text = state.user.email
                     )
                 }
             }

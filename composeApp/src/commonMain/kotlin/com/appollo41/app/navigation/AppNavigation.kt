@@ -15,8 +15,8 @@ import com.appollo41.app.users.list.UserListScreen
 import com.appollo41.app.users.list.UserListViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
-private fun NavController.navigateToUserDetails(customerId: Long) =
-    navigate(route = "users/$customerId")
+private fun NavController.navigateToUserDetails(userId: Long) =
+    navigate(route = "users/$userId")
 
 @Composable
 fun AppNavigation() {
@@ -32,9 +32,9 @@ fun AppNavigation() {
         )
 
         usersDetails(
-            route = "users/{$CUSTOMER_ID}",
+            route = "users/{$USER_ID}",
             arguments = listOf(
-                navArgument(CUSTOMER_ID) {
+                navArgument(USER_ID) {
                     type = NavType.LongType
                     nullable = false
                 }
@@ -51,7 +51,7 @@ private fun NavGraphBuilder.usersList(
     val viewModel = koinViewModel<UserListViewModel>()
     UserListScreen(
         viewModel = viewModel,
-        onUserClick = { userId -> navController.navigateToUserDetails(customerId = userId) },
+        onUserClick = { userId -> navController.navigateToUserDetails(userId = userId) },
     )
 }
 

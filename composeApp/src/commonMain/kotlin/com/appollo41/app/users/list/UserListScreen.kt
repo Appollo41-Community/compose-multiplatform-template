@@ -68,7 +68,7 @@ private fun UserListScreen(
                     )
                 },
                 title = {
-                    Text(text = "Compose Multiplatfrom")
+                    Text(text = "Compose Multiplatform")
                 }
             )
         },
@@ -94,7 +94,7 @@ private fun UserListScreen(
                     .padding(paddingValues),
             ) {
                 itemsIndexed(
-                    items = state.customers,
+                    items = state.users,
                     key = { _, user -> user.id },
                 ) { index, user ->
 

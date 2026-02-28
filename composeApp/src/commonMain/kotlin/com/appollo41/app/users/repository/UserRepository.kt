@@ -11,12 +11,12 @@ class UserRepository(
     private val dispatcherProvider: DispatcherProvider,
 ) {
 
-    fun observeAllUsers() = database.customers().observeAllUsers()
+    fun observeAllUsers() = database.users().observeAllUsers()
 
-    fun observeUser(id: Long) = database.customers().observeUser(id = id)
+    fun observeUser(id: Long) = database.users().observeUser(id = id)
 
     suspend fun insertUser(name: String, email: String) = withContext(dispatcherProvider.io()) {
-        database.customers().insertUser(
+        database.users().insertUser(
             user = User(
                 name = name,
                 email = email,
@@ -27,7 +27,7 @@ class UserRepository(
 
     suspend fun deleteUser(id: Long) {
         withContext(dispatcherProvider.io()) {
-            database.customers().deleteUser(id = id)
+            database.users().deleteUser(id = id)
         }
     }
 }

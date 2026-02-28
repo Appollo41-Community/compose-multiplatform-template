@@ -18,7 +18,7 @@ import kotlinx.coroutines.IO
 )
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class AppDatabase : RoomDatabase() {
-   abstract fun customers() : UserDao
+   abstract fun users() : UserDao
 }
 
 // The Room compiler generates the `actual` implementations.

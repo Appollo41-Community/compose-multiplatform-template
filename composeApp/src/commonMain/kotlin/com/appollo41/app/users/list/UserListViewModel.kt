@@ -35,7 +35,7 @@ class UserListViewModel(
         userRepository.observeAllUsers().collect {
             setState {
                 copy(
-                    customers = it.mapAsUserUiModel(),
+                    users = it.mapAsUserUiModel(),
                 )
             }
         }

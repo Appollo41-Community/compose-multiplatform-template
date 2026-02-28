@@ -3,7 +3,7 @@ package com.appollo41.app.users.details
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.appollo41.app.navigation.customerIdOrThrow
+import com.appollo41.app.navigation.userIdOrThrow
 import com.appollo41.app.users.db.User
 import com.appollo41.app.users.details.UserDetailsContract.SideEffect
 import com.appollo41.app.users.details.UserDetailsContract.UiEvent
@@ -28,7 +28,7 @@ class UserDetailsViewModel(
         fun create(savedStateHandle: SavedStateHandle): UserDetailsViewModel
     }
 
-    private val customerId = savedStateHandle.customerIdOrThrow
+    private val userId = savedStateHandle.userIdOrThrow
 
     private val _state = MutableStateFlow(UiState())
     val state = _state.asStateFlow()
@@ -43,7 +43,7 @@ class UserDetailsViewModel(
 
     init {
         observeEvents()
-        observeUser(id = customerId)
+        observeUser(id = userId)
     }
 
     private fun observeUser(id: Long) = viewModelScope.launch {
@@ -53,7 +53,7 @@ class UserDetailsViewModel(
             .collect {
                 setState {
                     copy(
-                        customer = it.mapAsUserUiModel(),
+                        user = it.mapAsUserUiModel(),
                     )
                 }
             }
@@ -62,14 +62,14 @@ class UserDetailsViewModel(
     private fun observeEvents() = viewModelScope.launch {
         events.collect {
             when (it) {
-                UiEvent.DeleteCustomer -> deleteCustomer()
+                UiEvent.DeleteUser -> deleteUser()
             }
         }
     }
 
-    private fun deleteCustomer() = viewModelScope.launch {
-        userRepository.deleteUser(id = customerId)
-        setEffect(SideEffect.CustomerDeleted)
+    private fun deleteUser() = viewModelScope.launch {
+        userRepository.deleteUser(id = userId)
+        setEffect(SideEffect.UserDeleted)
     }
 
     private fun User.mapAsUserUiModel() = UserUiModel(
