@@ -42,15 +42,15 @@ kotlin {
         }
         commonMain.dependencies {
             // Compose
-            implementation(compose.animation)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.material3AdaptiveNavigationSuite)
-            implementation(compose.materialIconsExtended)
-            implementation(compose.ui)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.animation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.material.icons.extended)
+            implementation(libs.compose.material3.adaptive.navigation.suite)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.ui.tooling.preview)
 
             // App lifecycle
             implementation(libs.androidx.lifecycle.viewmodel)
@@ -129,6 +129,7 @@ room {
 }
 
 dependencies {
+    debugImplementation(libs.compose.ui.tooling)
     listOf(
         "kspAndroid",
         "kspDesktop",

@@ -42,9 +42,9 @@ android {
 
 dependencies {
     implementation(project(":composeApp"))
-    implementation(compose.preview)
+    implementation(libs.compose.ui.tooling.preview)
     implementation(libs.androidx.activity.compose)
     implementation(libs.koin.androidx.compose)
     implementation(libs.napier)
-    debugImplementation(compose.uiTooling)
+    debugImplementation(libs.compose.ui.tooling)
 }
