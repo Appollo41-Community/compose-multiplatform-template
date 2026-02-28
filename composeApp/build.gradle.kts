@@ -11,10 +11,13 @@ plugins {
 }
 
 kotlin {
+    compilerOptions {
+        optIn.add("kotlin.uuid.ExperimentalUuidApi")
+    }
+
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
-            optIn.add("kotlin.uuid.ExperimentalUuidApi")
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 
@@ -68,7 +71,7 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.kotlinx.serialization.json)
 
-            // Data&Time
+            // DateTime
             implementation(libs.kotlinx.datetime)
 
             // Room
@@ -96,7 +99,6 @@ android {
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -109,8 +111,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildFeatures {

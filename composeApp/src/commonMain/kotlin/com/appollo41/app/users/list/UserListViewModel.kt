@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.getAndUpdate
 import kotlinx.coroutines.launch
-import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 class UserListViewModel(
@@ -49,7 +48,6 @@ class UserListViewModel(
         }
     }
 
-    @OptIn(ExperimentalUuidApi::class)
     private fun generateRandomUser() = viewModelScope.launch {
         userRepository.insertUser(
             name = Uuid.random().toString(),
