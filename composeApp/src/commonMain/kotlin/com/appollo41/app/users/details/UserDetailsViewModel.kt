@@ -24,10 +24,6 @@ class UserDetailsViewModel(
     private val userRepository: UserRepository,
 ) : ViewModel() {
 
-    interface Factory {
-        fun create(savedStateHandle: SavedStateHandle): UserDetailsViewModel
-    }
-
     private val userId = savedStateHandle.userIdOrThrow
 
     private val _state = MutableStateFlow(UiState())
