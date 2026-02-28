@@ -17,6 +17,10 @@ pluginManagement {
     }
 }
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
 dependencyResolutionManagement {
     repositories {
         google {
@@ -31,3 +35,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":app:android")
+include(":app:desktop")

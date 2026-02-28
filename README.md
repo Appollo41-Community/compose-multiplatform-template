@@ -12,8 +12,12 @@ This is a Compose Multiplatform project template targeting Android, iOS and Desk
     - `src/desktopMain` - Desktop JVM platform and access to all Java libraries;
 
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project if you need or want. 
+* `/app/android` contains the Android application entry point (Activity, Application class, launcher resources).
+
+* `/app/desktop` contains the Desktop JVM application entry point and native distribution config.
+
+* `/app/ios` contains the iOS application. Even if you’re sharing your UI with Compose Multiplatform,
+  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project if you need or want.
 
 ## Project Architecture
 - TBD

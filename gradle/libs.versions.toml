@@ -1,32 +1,32 @@
 [versions]
-agp = "8.5.2"
-android-compileSdk = "35"
+agp = "8.13.2"
+android-compileSdk = "36"
 android-minSdk = "24"
-android-targetSdk = "35"
-androidx-activityCompose = "1.10.0"
-androidx-appcompat = "1.7.0"
-androidx-constraintlayout = "2.2.0"
-androidx-core-ktx = "1.15.0"
-androidx-espresso-core = "3.6.1"
-androidx-lifecycle = "2.8.4"
-androidx-material = "1.12.0"
-androidx-navigation = "2.8.0-alpha10"
-androidx-test-junit = "1.2.1"
-compose-plugin = "1.7.3"
+android-targetSdk = "36"
+androidx-activityCompose = "1.12.4"
+androidx-appcompat = "1.7.1"
+androidx-constraintlayout = "2.2.1"
+androidx-core-ktx = "1.17.0"
+androidx-espresso-core = "3.7.0"
+androidx-lifecycle = "2.9.6"
+androidx-material = "1.13.0"
+androidx-navigation = "2.9.2"
+androidx-test-junit = "1.3.0"
+compose-plugin = "1.10.1"
 junit = "4.13.2"
-kotlin = "2.1.0"
-kotlinx-coroutines = "1.10.1"
-kotlinx-datetime = "0.6.1"
-kotlinx-serialization = "1.7.0"
-koin-bom = "4.0.0"
-koinComposeMultiplatform = "4.0.0"
-koinCompose = "4.0.0"
-ktor = "2.3.12"
+kotlin = "2.3.10"
+kotlinx-coroutines = "1.10.2"
+kotlinx-datetime = "0.7.1"
+kotlinx-serialization = "1.10.0"
+koin-bom = "4.1.1"
+koinComposeMultiplatform = "4.1.1"
+koinCompose = "4.1.1"
+ktor = "3.4.0"
 napier = "2.7.1"
-room = "2.7.0-alpha11" #alpha12 not working with iOS
-ksp = "2.1.0-1.0.29"
-sqlite = "2.5.0-SNAPSHOT"
-calf = "0.7.0"
+room = "2.8.4" #alpha12 not working with iOS
+ksp = "2.3.4"
+sqlite = "2.6.2"
+calf = "0.9.0"
 
 
 [libraries]
@@ -87,6 +87,7 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
