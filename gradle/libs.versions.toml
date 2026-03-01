@@ -30,6 +30,7 @@ room = "2.8.4" #alpha12 not working with iOS
 ksp = "2.3.4"
 sqlite = "2.6.2"
 calf = "0.9.0"
+conveyor = "1.13"
 
 
 [libraries]
@@ -107,3 +108,4 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 room = { id = "androidx.room", version.ref = "room" }
+conveyor = { id = "dev.hydraulic.conveyor", version.ref = "conveyor" }
